@@ -1,1 +1,25 @@
+# This is a basic workflow to help you get started with Actions
 
+name: workflow1
+# Controls when the action will run. 
+on:
+  # antes de acabar
+  pull_request:
+    branches: [ develop ]
+    
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          name: target
+          path: target/*.jar
+          retention-days: 1
+          fetch-depth: 0
+      - run: |
+          for commit in $(git rev-list ${{ github.base_ref }}..${{ github.head_ref }}); do
+              git checkout $commit
+              echo "run test"
+          done
