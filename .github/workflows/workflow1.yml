@@ -37,4 +37,4 @@ jobs:
         java-version: 11
     #unitario
     - name: Build native with Maven
-      run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
+      run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' RestTest
