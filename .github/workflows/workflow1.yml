@@ -37,9 +37,9 @@ jobs:
         java-version: 11
     #rest
     - name: Build native with Maven
-      run: mvn -B -X '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
+      run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test
     #unitary
     - name: Build native with Maven
-      run: mvn -B -X '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
+      run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
       
 
