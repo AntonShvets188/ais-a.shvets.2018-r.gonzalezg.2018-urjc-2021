@@ -17,8 +17,7 @@ jobs:
           name: target
           path: target/*.jar
           retention-days: 1
-          fetch-depth: 0
+          ref: 'commit'
       - run: 
-          for commit in $(git checkout develop) do
-              mvn -B package
-          done
+          mvn -B package
+
