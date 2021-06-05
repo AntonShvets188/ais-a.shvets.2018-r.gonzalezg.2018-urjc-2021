@@ -5,6 +5,8 @@ name: workflow2
 on:
   # antes de acabar
   pull_request:
+  
+  push:
     branches: [ develop ]
     
   workflow_dispatch:
