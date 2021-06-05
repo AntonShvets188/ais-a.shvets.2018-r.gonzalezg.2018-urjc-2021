@@ -16,6 +16,13 @@ on:
 jobs:
   nightly:
     runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        buildx-version:
+          - latest
+          - v0.4.1
+          - ""
     steps:
     - uses: actions/checkout@v2
     - name: 'Upload Artifact'
