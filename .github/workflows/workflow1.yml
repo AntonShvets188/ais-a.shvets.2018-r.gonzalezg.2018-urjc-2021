@@ -35,9 +35,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    #rest
-    - name: Build native with Maven
-      run: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.rest.*Test' test 
     #unitario
     - name: Build native with Maven
       run: mvn -B '-Dtest=es.urjc.code.daw.library.unitary.*Test' test
