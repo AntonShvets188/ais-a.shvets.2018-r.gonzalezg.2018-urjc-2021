@@ -33,6 +33,11 @@ jobs:
       with:
           username: anton155
           password: yEpRyg1515
+    - name: Set up Docker Buildx
+      id: buildx
+      uses: ./
+      with:
+        version: ${{ matrix.buildx-version }}
     - name: Push to Docker Hub
       uses: docker/build-push-action@v2
       with:
