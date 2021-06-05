@@ -37,4 +37,4 @@ jobs:
         java-version: 11
     #unitario
     - name: Build native with Maven
-      run: mvn -B '-Dtest=C:.Users.Anton.Desktop.github.ais-a.shvets.2018-r.gonzalezg.2018-urjc-2021.src.test.java.es.urjc.code.daw.library.e2e.rest.*Test' RestTest
+      run: mvn -B package
