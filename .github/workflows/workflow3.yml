@@ -7,7 +7,7 @@ on:
   push:
     branches: [ develop ]
   schedule:
-    - cron:  '05 * * *'
+    - cron:  '00 00 * * *'
     
   workflow_dispatch:
   
