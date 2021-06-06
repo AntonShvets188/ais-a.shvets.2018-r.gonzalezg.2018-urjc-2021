@@ -16,7 +16,7 @@ on:
 jobs:
   build:
     name: Build Java application
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Clone repository
       uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
     - name: Build native with Maven
       run: mvn -B package
     - name: Upload jar for next job
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v1
       with:
         name: target
         path: target
