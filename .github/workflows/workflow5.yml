@@ -1,7 +1,7 @@
 name: workflow5
 on:
   push:
-    branches: [ master ]
+    branches: [ production ]
   workflow_dispatch:
   
 jobs:
