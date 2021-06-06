@@ -45,15 +45,12 @@ jobs:
         with:
           name: target
       - name: Generate tag
-        run: echo ::set-output name=tag::$(date +'%Y%m%d.%H%M%S')
+        run: echo ::set-output name=tag::$(date +%s)
         id: project
       - name: Login to DockerHub
         run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}" 
-      - name: Version
-        run: echo ::set-output name=VERSION::$(mvn -q help:evaluate -Dexpression=project.version -DforceStdout)
-        id: version
       - name: Build image
-        run: docker build -t ${{ steps.version.outputs.VERSION }}
+        run: docker build -t ${{ steps.project.outputs.tag }}
       - name: Push image to DockerHub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/items:${{ steps.project.outputs.tag }}
 
