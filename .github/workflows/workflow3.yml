@@ -50,7 +50,7 @@ jobs:
       - name: Login to DockerHub
         run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}" 
       - name: Build image
-        run: docker build -t ${{ steps.project.outputs.tag }}
+        run: docker --build-arg -t ${{ steps.project.outputs.tag }} .
       - name: Push image to DockerHub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/items:${{ steps.project.outputs.tag }}
 
