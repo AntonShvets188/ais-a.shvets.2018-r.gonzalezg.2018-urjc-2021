@@ -27,8 +27,8 @@ jobs:
     - name: Npm Install
       run: npm ci
       
-    - name: Npm Build
-      run: npm run build
+    #- name: Npm Build
+     # run: npm run build
       
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
